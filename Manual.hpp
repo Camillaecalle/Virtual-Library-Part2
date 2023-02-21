@@ -41,9 +41,15 @@ void setDevice (const std::string& device);
 
 std::string getDevice() const;
 
-//void Manual::setWebsite (const std::string& website);
+void setWebsite (const std::string& website, std::string& url);
 
+//std::string getWebsite();
 
+// void setVisualAid(const std::string &visaul_aid);
+
+// std::string hasVisualAid();
+
+// std::string hasWebsite();
 
 };
 

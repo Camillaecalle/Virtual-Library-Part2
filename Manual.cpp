@@ -62,7 +62,7 @@ void Manual::setDevice (const std::string& device){
 //getDevice
 
 std::string Manual::getDevice() const{
-    return device_; 
+    return device_;
 }
   
 /**
@@ -77,12 +77,45 @@ std::string Manual::getDevice() const{
 **/
 //setWebsite
 
-//RegEx library for the Manual::setWebsite() function
-//std::regex urlRegex("https?://www^\\.[a-zA-Z]{2,}\\.[a-zA-Z]{2,}");
+
+void Manual::setWebsite (const std::string& website, std::string& url) {
+    std::string regexPattern = "https?://www^\\.[a-zA-Z]{2,}\\.[a-zA-Z]{2,}";
+    std::regex regexRule(regexPattern);
+    if (regex_match(url, regexRule)) {
+        url_ = url;
+        website_ = true;
+    }
+    else {
+        url_ = "";
+        website_=false;
+    }
+
+}
 
 
-// void Manual::setWebsite (const std::string& website){
-//     website = 
-//     return ;
+
+/**
+  @return  : the url for the website
+**/
+// //getWebsite
+
+// std::string Manual::getWebsite() const{
+//     return url_;
 // }
 
+// /**
+//   @param  : a reference to boolean
+//   @post   : sets the private member variable indicating the presence
+//             of a visual aid to the value of the parameter
+// **/
+// //setVisualAid()
+
+// void setVisualAid(const std::string &visaul_aid) {
+//     visual_=visual_aid;
+// }
+// std::string hasVisualAid() {
+//     return visual_aid;
+// }
+// std::string hasWebsite() {
+//     return website;
+// }
