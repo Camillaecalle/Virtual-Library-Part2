@@ -85,7 +85,7 @@ std::vector<review> Novel::createReview(const float& review){
 
 
 void Novel::addReview(const std::vector<review> &review){ //NEED TO CHECK
-    reviews_.insert(review);
+    //reviews_.insert(review);
 }
 
 
