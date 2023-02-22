@@ -53,11 +53,6 @@ void Textbook::setReviewQuestions(const bool& review_questions = true){
     review_questions_ = review_questions;
 }
 
-/**
-  @return  : the flag indicating if the texbook has review questions
-**/
-//checkReviewQuestions
-
 bool Textbook::checkReviewQuestions() const{
     return review_questions_;
 }
