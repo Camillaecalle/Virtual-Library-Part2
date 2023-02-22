@@ -62,7 +62,7 @@ void Novel::setFilmAdaptation() const{
 
 double Novel::getAverageRating()const{ //the value of the average rating private member STILL NEED TO WRITE!!!
 
-    return;
+    return 0;
 }
 
 
