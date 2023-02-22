@@ -3,7 +3,7 @@
 #ifndef TEXTBOOK_HPP_
 #define TEXTBOOK_HPP_
 #include "Book.hpp"
-
+#include <iostream>
 #include <string>
 
 enum grade_level { NONE, ELEMENTARY, JUNIOR_HIGH, HIGH_SCHOOL, COLLEGE};

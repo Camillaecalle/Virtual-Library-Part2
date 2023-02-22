@@ -30,29 +30,18 @@ bool website_;
 
 public:
 Manual();
-Manual(std::string title, std::string author, int page_count, std::string device, bool is_digital = false, std::string url = "", bool visual = false);
+Manual(std::string title, std::string author, int page_count, std::string device, bool is_digital = false, std::string url = "", bool visual_aid = false);
 
 void setDevice (const std::string& device);
-
-/**
-  @return  : the variable indicating the device the manual is for
-**/
-//getDevice
 
 std::string getDevice() const;
 
 void setWebsite (const std::string& website, std::string& url);
 
-//std::string getWebsite();
+std::string getWebsite() const;
 
-// void setVisualAid(const std::string &visaul_aid);
-
-// std::string hasVisualAid();
-
-// std::string hasWebsite();
-
+void setVisualAid(const bool& visaul_aid);
+bool hasVisualAid() const;
+bool hasWebsite() const;
 };
-
-
-
 #endif

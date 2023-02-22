@@ -3,6 +3,7 @@
 #define NOVEL_HPP_
 #include "Book.hpp"
 #include <vector>
+#include <iostream>
 #include <string>
 
 
