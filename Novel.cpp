@@ -90,7 +90,6 @@ void Novel::addReview(const std::vector<review> &review){ //NEED TO CHECK
 
 
 void Novel::calculateAverageRating(const double& average_rating){ //Need to finish!!!
-    return 0;
 }
 
 
