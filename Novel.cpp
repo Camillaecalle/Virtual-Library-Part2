@@ -1,10 +1,7 @@
-"Novel.hpp"
+#include "Novel.hpp"
 
 Novel::Novel(){
     genre_ = "";
-    charecter_list_ = ;
-    review_ = ;
-    average_rating_ = ;
     has_film_adaptation_ = false;
 }
 
@@ -13,37 +10,33 @@ Novel::Novel(){
 Novel::Novel(std::string title, std::string author, int page_count, std::string genre, bool is_digital, bool film_adaptation):
 Book(title, author, page_count, is_digital) {
     genre_=genre;
-    has_film_adaptation_=film_adaptation;
+    has_film_adaptation_ = film_adaptation;
 }
 
 
-void Novel::setGenre(const std::string& subject) {
-    genre_=genre;
+void Novel::setGenre(const std::string& genre) {
+    genre_ = genre;
 }
 
 
-std::string Novel::getGenre(const std::string& genre) {
+std::string Novel::getGenre() const {
     return genre_;
 }
 
 
 std::vector<char> Novel::getCharacterlist()const{ //NOT SURE IF I WROTE THIS CORRECTLY
-    return character_list_;
+    return character_list_; 
 }
 
-std::string Novel::getCharecterListString()const{ //is this supposed to be string? //NEED TO WRITE STILL!!!
-    return 0;
-    /**
-  @return    : a string of all the characters in the
-              character_list_ private member, concatenated
-              and separated by a space " " .
-              For example: "character1 character2 character3"
-**/
-//getCharacterListString
-
+std::string Novel::getCharacterListString() const{ //is this supposed to be string? //NEED TO WRITE STILL!!!
+    std::string result = "";
+    for(int i = 0; i < character_list_.size(); i++){
+        result += character_list_[i] + " "; 
+    } 
+    return result;  //NEED TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 }
 
-void Novel::addCharecter(const std::string& charecter){ //NEED TO WRITE STILL!!!
+void Novel::addCharacter(const std::string& character){ //NEED TO WRITE STILL!!!
     /**
   @param  : a reference to string indicating a character
   @post   : inserts the character into the character_list_ vector
@@ -56,8 +49,9 @@ bool Novel::hasFilmAdaptation() const{
     return has_film_adaptation_;
 }
 
-void Novel::setFilmAdaptation() const{
-    has_film_adaptation = true;
+void Novel::setFilmAdaptation(const bool& has_film_adaptation){
+    
+    has_film_adaptation_ = true;
 }
 
 double Novel::getAverageRating()const{ //the value of the average rating private member STILL NEED TO WRITE!!!
@@ -66,8 +60,8 @@ double Novel::getAverageRating()const{ //the value of the average rating private
 }
 
 
-std::vector<review> Novel::createReview(const float& review){
-    return 0;
+std::vector<review> Novel::createReview(const double& review){
+    return reviews_;
 }
 
 

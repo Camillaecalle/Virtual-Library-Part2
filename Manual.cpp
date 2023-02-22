@@ -8,12 +8,10 @@
 
 Manual::Manual(){
 
-    url_ = "";
+    url_ = ""; 
     device_ = "";
     visual_ = false;
     website_ = false;
-
-
 }
 
 Manual::Manual(std::string title, std::string author, int page_count, std::string device, bool is_digital, std::string url, bool visual_aid):Book(title, author, page_count, is_digital){
