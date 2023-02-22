@@ -16,10 +16,6 @@ Manual::Manual(){
 
 }
 
-
-
-
-
 Manual::Manual(std::string title, std::string author, int page_count, std::string device, bool is_digital, std::string url, bool visual_aid):Book(title, author, page_count, is_digital){
     
     device_ = device;
@@ -37,14 +33,9 @@ Manual::Manual(std::string title, std::string author, int page_count, std::strin
         url = "";
         website_ = false;
     }
-
-
-
 }
 
 //Mutators and Accessor Funcitons
-
-
 
 void Manual::setDevice (const std::string& device){
     device_=device;
