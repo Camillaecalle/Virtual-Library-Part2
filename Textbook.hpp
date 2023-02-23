@@ -16,12 +16,12 @@ class Textbook : public Book {
 
     public:
     Textbook();
-    Textbook(std::string title, std::string author, int page_count, std::string subject, bool review_questions, grade_level grade = NONE, bool is_digital = false);
+    Textbook(std::string title, std::string author, int page_count, std::string subject, bool is_digital = false, grade_level grade = NONE, bool review_questions = false);  
     void setSubject(const std::string& subject);
     std::string getSubject() const;
     void setGradeLevel(const grade_level& grade);
     std::string getGradeLevel() const;
-    void setReviewQuestions(const bool& review_questions);
+    void setReviewQuestions();
     bool checkReviewQuestions() const;
 
 };

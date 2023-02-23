@@ -13,8 +13,6 @@
 #include <regex>
 
 
-//declare enum
-
 class Manual : public Book {
 
 //Private Member Variables needed
@@ -31,17 +29,13 @@ bool website_;
 public:
 Manual();
 Manual(std::string title, std::string author, int page_count, std::string device, bool is_digital = false, std::string url = "", bool visual_aid = false);
-
 void setDevice (const std::string& device);
-
 std::string getDevice() const;
-
-void setWebsite (const std::string& website, std::string& url);
-
-std::string getWebsite() const;
-
+bool setWebsite (const std::string& url);
+std::string getWebsite() const; //only when ur reading something or taking in the parameter 
 void setVisualAid(const bool& visaul_aid);
 bool hasVisualAid() const;
 bool hasWebsite() const;
 };
+
 #endif
