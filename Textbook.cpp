@@ -8,7 +8,7 @@ Textbook::Textbook(){
 
 }
 
-Textbook::Textbook(std::string title, std::string author, int page_count, std::string subject, bool review_questions, grade_level grade, bool is_digital):
+Textbook::Textbook(std::string title, std::string author, int page_count, std::string subject, bool is_digital, grade_level grade, bool review_questions):
 Book(title, author, page_count,is_digital){
 
     subject_=subject;
@@ -49,8 +49,8 @@ std::string Textbook::getGradeLevel() const{
     }
 }
 
-void Textbook::setReviewQuestions(const bool& review_questions = true){
-    review_questions_ = review_questions;
+void Textbook::setReviewQuestions(){ //NO CONSTANT
+    review_questions_ = true;
 }
 
 bool Textbook::checkReviewQuestions() const{

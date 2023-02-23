@@ -24,25 +24,24 @@ std::string Novel::getGenre() const {
 }
 
 
-std::vector<char> Novel::getCharacterlist()const{ //NOT SURE IF I WROTE THIS CORRECTLY
+std::vector<char> Novel::getCharacterlist()const{ 
     return character_list_; 
 }
 
-std::string Novel::getCharacterListString() const{ //is this supposed to be string? //NEED TO WRITE STILL!!!
+ //   character_list_.erase(character_list_.back());
+
+std::string Novel::getCharacterListString() const{ 
     std::string result = "";
     for(int i = 0; i < character_list_.size(); i++){
-        result += character_list_[i] + " "; 
+        result += character_list_[i] + " ";     
     } 
     return result;  //NEED TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKK
 }
 
-void Novel::addCharacter(const std::string& character){ //NEED TO WRITE STILL!!!
-    /**
-  @param  : a reference to string indicating a character
-  @post   : inserts the character into the character_list_ vector
-**/
-//addCharacter
+void Novel::addCharacter(const std::string& character_list){
+    character_list_.push_back(character_list);
 }
+
 
 
 bool Novel::hasFilmAdaptation() const{
@@ -60,8 +59,10 @@ double Novel::getAverageRating()const{ //the value of the average rating private
 }
 
 
-std::vector<review> Novel::createReview(const double& review){
+std::vector<review> Novel::createReview(const double& review, std::string& rating){
+    
     return reviews_;
+ //   return rating_; AM I MISSING A PARAMETER???
 }
 
 
