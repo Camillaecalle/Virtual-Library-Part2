@@ -2,17 +2,16 @@
 #include "Textbook.hpp"
 
 Textbook::Textbook(){
-    review_questions_ = false;
-    grade_ = NONE;
     subject_ = "";
+    grade_ = NONE;
+    review_questions_ = false;
 
 }
 
 Textbook::Textbook(const std::string& title,const std::string& author, const int page_count,const std::string& subject, bool is_digital,const grade_level& grade, bool review_questions):
 Book(title, author, page_count,is_digital){
-
-    subject_=subject;
     grade_=grade;
+    subject_=subject;
     review_questions_=review_questions;
 }
 
@@ -32,20 +31,20 @@ void Textbook::setGradeLevel(const grade_level& grade){
 std::string Textbook::getGradeLevel() const{
     switch(grade_) {
     case 0:
-    return "NONE";
-    break; 
+        return "NONE";
+        break; 
     case 1:
-    return "ELEMENTARY";
-    break;
+        return "ELEMENTARY";
+        break;
     case 2:
-    return "JUNIOR_HIGH";
-    break;
+        return "JUNIOR_HIGH";
+        break;
     case 3:
-    return "HIGH_SCHOOL";
-    break;
+        return "HIGH_SCHOOL";
+        break;
     case 4:
-    return "COLLEGE";
-    break;
+        return "COLLEGE";
+        break;
     }
 }
 
