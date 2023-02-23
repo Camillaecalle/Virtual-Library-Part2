@@ -28,7 +28,7 @@ bool website_;
 
 public:
 Manual();
-Manual(std::string title, std::string author, int page_count, std::string device, bool is_digital = false, std::string url = "", bool visual_aid = false);
+Manual( const std::string& title, const std::string& author,const int page_count,const std::string& device, bool is_digital = false, const std::string& url = "", bool visual_aid = false);
 void setDevice (const std::string& device);
 std::string getDevice() const;
 bool setWebsite (const std::string& url);

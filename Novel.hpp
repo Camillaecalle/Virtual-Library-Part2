@@ -15,37 +15,31 @@ struct review {
 
 class Novel: public Book {
     private: 
-  
+
     std::string genre_;
-    std::vector<char> character_list_;
-    std::vector<review> reviews_;
+    std::vector<std::string> character_list_; //vector
+    std::vector<review> reviews_; //vector
     double averagerating_;
     bool has_film_adaptation_;
 
 
     public:
     Novel();
-    Novel(std::string title, std::string author, int page_count, std::string genre, bool is_digital, bool film_adaptation);
+    Novel(const std::string& title,const std::string& author,const int page_count,const std::string& genre, bool is_digital = false, bool film_adaptation = false);
     std::string getGenre() const;
     void setGenre(const std::string& genre);
     //std::vector<char> getCharacterlist()const;
-    std::vector<char> getCharacterlist()const;
+    std::vector<std::string> getCharacterlist()const;
 
-
-
-    std::string getCharacterListString() const; //Do i need const here? 
+    std::string getCharacterListString() const;
     void addCharacter(const std::string& character_list);
-
-
-
-
     bool hasFilmAdaptation()const;
     void setFilmAdaptation(const bool& has_film_adaptation);
     double getAverageRating()const;
-    std::vector<review> createReview(const double& review, std::string& rating);
+    review createReview(const double& score, std::string& rating);
     
-    void addReview(const std::vector<review> &review);
-    void calculateAverageRating(const double& average_rating);
+    void addReview(const review& review);
+    void calculateAverageRating();
 
 };
 

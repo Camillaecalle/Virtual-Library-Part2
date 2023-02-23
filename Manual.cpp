@@ -9,12 +9,12 @@ Manual::Manual(){
     website_ = false;
 }
 
-Manual::Manual(std::string title, std::string author, int page_count, std::string device, bool is_digital, std::string url, bool visual_aid):
+Manual::Manual(const std::string& title,const std::string& author,const int page_count,const std::string& device, bool is_digital,const std::string& url, bool visual_aid):
 Book(title, author, page_count, is_digital){
     
     device_ = device;
     visual_ = visual_aid;
-    std::string regexPattern("https?://www.[a-zA-Z0-9-~:/?#@!$&+,;%=]+.[a-zA-Z0-9-~:/?#@!$&+,;%=]{2,}");
+    const std::string regexPattern("https?://www.[a-zA-Z0-9-~:/?#@!$&+,;%=]+.[a-zA-Z0-9-~:/?#@!$&+,;%=]{2,}");
     std::regex regexRule(regexPattern);
     bool valid = regex_match(url,regexRule);
     if (valid == true) 
@@ -24,7 +24,7 @@ Book(title, author, page_count, is_digital){
     }
     else if(valid == false)
     {
-        url = "";
+        url_ = "";
         website_ = false;
     }
 }
@@ -47,7 +47,7 @@ bool Manual::setWebsite (const std::string& url) {
         url_ = url;
         website_ = true;
     }
-    else if (valid==false){
+    else if (valid==false){       ///Might have to fix const in regexPattern.
         url_ = "Broken Link";
     }
         website_=true; //false before

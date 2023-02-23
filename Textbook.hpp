@@ -16,7 +16,7 @@ class Textbook : public Book {
 
     public:
     Textbook();
-    Textbook(std::string title, std::string author, int page_count, std::string subject, bool is_digital = false, grade_level grade = NONE, bool review_questions = false);  
+    Textbook(const std::string& title, const std::string& author,const int page_count, const std::string& subject, bool is_digital = false, const grade_level& grade = NONE, bool review_questions = false);  
     void setSubject(const std::string& subject);
     std::string getSubject() const;
     void setGradeLevel(const grade_level& grade);

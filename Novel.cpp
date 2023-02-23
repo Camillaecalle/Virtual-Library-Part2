@@ -2,13 +2,13 @@
 
 Novel::Novel() {
     genre_ = "";
-    rating_={0.0};
+    averagerating_ = 0;
     has_film_adaptation_=false;
 } 
 
 //Parameterized Constructor
 
-Novel::Novel(std::string title, std::string author, int page_count, std::string genre, bool is_digital, bool film_adaptation):
+Novel::Novel(const std::string& title,const std::string& author,const int page_count,const std::string& genre, bool is_digital, bool film_adaptation):
 Book(title, author, page_count, is_digital) {
     genre_=genre;
     has_film_adaptation_ = film_adaptation;
@@ -23,18 +23,20 @@ void Novel::setGenre(const std::string& genre) {
     genre_ = genre;
 }
 
-std::vector<char> Novel::getCharacterlist()const{ 
+std::vector<std::string> Novel::getCharacterlist()const{ 
     return character_list_; 
 }
 
- //   character_list_.erase(character_list_.back());
 
-std::string Novel::getCharacterListString() const{ 
-    std::string result = "";
-    for(int i = 0; i < character_list_.size(); i++){
-        result += character_list_[i] + " ";     
-    } 
-    return result;  //NEED TO CHECKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+std::string Novel::getCharacterListString() const{
+    std::string character_list_string = "";
+    for(int i=0; i< character_list_.size();i++) {
+            character_list_string = character_list_string + character_list_[i] + " ";
+        else{
+            character_list_string = character_list_string + character_list_[i];
+        }
+    }
+    return character_list_string;
 }
 
 void Novel::addCharacter(const std::string& character_list) {
@@ -50,52 +52,35 @@ void Novel::setFilmAdaptation(const bool& has_film_adaptation){
      has_film_adaptation_ = true;
  }
 
- double Novel::getAverageRating()const{ //the value of the average rating private member STILL NEED TO WRITE!!!
+ double Novel::getAverageRating()const{ 
     
-    return average_rating_;
+    return averagerating_;
  }
 
-
-
-////THIS DOWN NEEDS TO BE CHECKED
-
-
-/**
-  @param    : a reference to floating point number (double) indicating
-              the score of the  review
-  @param    : a reference to string indicating the rating of the review
-  @return   : creates and returns a review data type with
-              score and rating as indicated by the parameters
-*/
-//createReview
-
-std::vector<review> Novel::createReview(const double& review, std::string& rating){
-
-     return reviews_.rating_;
+review Novel::createReview(const double& score, std::string& rating){  //Look back at data type
+    review r; 
+    r.score_ = score; 
+    r.rating_ = rating;
+    return r;
 
  }
 
-/**
-  @param  : a reference to review object
-  @post   : inserts the review argument into the reviews_ vector
-**/
-
-
-void Novel::addReview(const std::vector<review> &review){ //NEED TO CHECK
-    reviews_.insert(review);
+void Novel::addReview(const review& review){
+    reviews_.push_back(review);
 }
 
-
-// void Novel::calculateAverageRating(const double& average_rating){
-//     int review;
-//     for (int i = 0; i < average_rating_.size; i++){
-//         review = review + average_rating_[i];
-//     }
-//    // average_rating_ = review/average_rating_.size();
-//     return average_rating_;
-// }
-
-
+ void Novel::calculateAverageRating(){ //reviews_ vector
+    if (reviews_.size() == 0){
+        averagerating_ = 0;
+        return ;
+    } else {
+    double storage = 0; 
+    for(int i = 0; i < reviews_.size(); i++){
+        storage += reviews_[i].score_; //goes through the vector and all of the elements scores and puts into storage. 
+    }
+    storage = storage/reviews_.size();
+    }
+ }
 
 
 
