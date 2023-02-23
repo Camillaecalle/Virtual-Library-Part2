@@ -23,7 +23,7 @@ void Novel::setGenre(const std::string& genre) {
     genre_ = genre;
 }
 
-std::vector<std::string> Novel::getCharacterlist()const{ 
+std::vector<std::string> Novel::getCharacterList()const{ //CHECK SYNTAX
     return character_list_; 
 }
 

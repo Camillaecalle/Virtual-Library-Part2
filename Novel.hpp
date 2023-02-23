@@ -28,8 +28,7 @@ class Novel: public Book {
     Novel(const std::string& title,const std::string& author,const int page_count,const std::string& genre, bool is_digital = false, bool film_adaptation = false);
     std::string getGenre() const;
     void setGenre(const std::string& genre);
-    //std::vector<char> getCharacterlist()const;
-    std::vector<std::string> getCharacterlist()const;
+    std::vector<std::string> getCharacterList()const;
 
     std::string getCharacterListString() const;
     void addCharacter(const std::string& character_list);
