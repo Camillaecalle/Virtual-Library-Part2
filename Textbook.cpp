@@ -29,7 +29,7 @@ void Textbook::setGradeLevel(const grade_level& grade){
 }
 
 std::string Textbook::getGradeLevel() const{
-    switch(grade_) {
+    switch(grade_){
     case 0:
         return "NONE";
         break; 
@@ -37,10 +37,10 @@ std::string Textbook::getGradeLevel() const{
         return "ELEMENTARY";
         break;
     case 2:
-        return "JUNIOR_HIGH";
+        return "JUNIOR HIGH";
         break;
     case 3:
-        return "HIGH_SCHOOL";
+        return "HIGH SCHOOL";
         break;
     case 4:
         return "COLLEGE";
