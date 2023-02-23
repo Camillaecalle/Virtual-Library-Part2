@@ -29,14 +29,15 @@ std::vector<std::string> Novel::getCharacterlist()const{
 
 
 std::string Novel::getCharacterListString() const{
-    std::string character_list_string = "";
+    std::string character_list_strings = "";
     for(int i=0; i< character_list_.size();i++) {
-            character_list_string = character_list_string + character_list_[i] + " ";
-        else{
-            character_list_string = character_list_string + character_list_[i];
+        if(i != character_list_.size()-1)
+        character_list_strings = character_list_strings + character_list_[i] + " ";
+        else {
+            character_list_strings = character_list_strings + character_list_[i];
         }
     }
-    return character_list_string;
+    return character_list_strings;
 }
 
 void Novel::addCharacter(const std::string& character_list) {
