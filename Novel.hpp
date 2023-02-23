@@ -21,8 +21,6 @@ class Novel: public Book {
     std::vector<review> reviews_; //vector
     double averagerating_;
     bool has_film_adaptation_;
-
-
     public:
     Novel();
     Novel(const std::string& title,const std::string& author,const int page_count,const std::string& genre, bool is_digital = false, bool film_adaptation = false);
@@ -35,7 +33,7 @@ class Novel: public Book {
     bool hasFilmAdaptation()const;
     void setFilmAdaptation(const bool& has_film_adaptation);
     double getAverageRating()const;
-    review createReview(const double& score, std::string& rating);
+    review createReview(const double& score,const std::string& rating);
     
     void addReview(const review& review);
     void calculateAverageRating();

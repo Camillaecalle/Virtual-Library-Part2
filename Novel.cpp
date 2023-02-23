@@ -1,6 +1,7 @@
 #include "Novel.hpp"
 
-Novel::Novel() {
+Novel::Novel():
+Book(){
     genre_ = "";
     averagerating_ = 0;
     has_film_adaptation_=false;
@@ -15,7 +16,7 @@ Book(title, author, page_count, is_digital) {
 
 }
 
-std::string Novel::getGenre() const {
+std::string Novel::getGenre() const{
     return genre_;
 }
 
@@ -58,11 +59,11 @@ void Novel::setFilmAdaptation(const bool& has_film_adaptation){
     return averagerating_;
  }
 
-review Novel::createReview(const double& score, std::string& rating){  //Look back at data type
-    review r; 
-    r.score_ = score; 
-    r.rating_ = rating;
-    return r;
+review Novel::createReview(const double& score,const std::string& rating){  //Look back at data type
+    review create; 
+    create.score_ = score; 
+    create.rating_ = rating;
+    return create;
 
  }
 
