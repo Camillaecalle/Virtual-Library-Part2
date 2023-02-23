@@ -21,26 +21,22 @@ class Novel: public Book {
     std::vector<review> reviews_; //vector
     double averagerating_;
     bool has_film_adaptation_;
+
     public:
     Novel();
-    Novel(const std::string& title,const std::string& author,const int page_count,const std::string& genre, bool is_digital = false, bool film_adaptation = false);
-    std::string getGenre() const;
+    Novel( std::string title, std::string author, int page_count, std::string genre, bool is_digital = false, bool film_adaptation = false);
     void setGenre(const std::string& genre);
-    std::vector<std::string> getCharacterList()const;
-
+    std::string getGenre() const;
+    std::vector<std::string> getCharacterList() const;
     std::string getCharacterListString() const;
-    void addCharacter(const std::string& character_list);
+    void addCharacter(const std::string& character_name);
     bool hasFilmAdaptation()const;
-    void setFilmAdaptation(const bool& has_film_adaptation);
+    void setFilmAdaptation();
     double getAverageRating()const;
     review createReview(const double& score,const std::string& rating);
     
-    void addReview(const review& review);
+    void addReview(const review& object);
     void calculateAverageRating();
 
 };
-
-
-
-
 #endif

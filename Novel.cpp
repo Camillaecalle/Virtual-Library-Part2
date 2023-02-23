@@ -1,27 +1,29 @@
 #include "Novel.hpp"
 
-Novel::Novel():
-Book(){
+Novel::Novel(){
     genre_ = "";
     averagerating_ = 0;
     has_film_adaptation_=false;
+    character_list_= {};
+    reviews_ ={};
+
 } 
 
 //Parameterized Constructor
 
-Novel::Novel(const std::string& title,const std::string& author,const int page_count,const std::string& genre, bool is_digital, bool film_adaptation):
+Novel::Novel(std::string title, std::string author, int page_count, std::string genre, bool is_digital, bool film_adaptation):
 Book(title, author, page_count, is_digital) {
-    genre_=genre;
+    genre_ = genre;
     has_film_adaptation_ = film_adaptation;
 
 }
 
-std::string Novel::getGenre() const{
-    return genre_;
-}
-
 void Novel::setGenre(const std::string& genre) {
     genre_ = genre;
+}
+
+std::string Novel::getGenre() const{
+    return genre_;
 }
 
 std::vector<std::string> Novel::getCharacterList()const{ //CHECK SYNTAX
@@ -32,7 +34,7 @@ std::vector<std::string> Novel::getCharacterList()const{ //CHECK SYNTAX
 std::string Novel::getCharacterListString() const{
     std::string character_list_strings = "";
     for(int i=0; i< character_list_.size();i++) {
-        if(i != character_list_.size()-1)
+        if(i != character_list_.size() -1)
         character_list_strings = character_list_strings + character_list_[i] + " ";
         else {
             character_list_strings = character_list_strings + character_list_[i];
@@ -41,15 +43,15 @@ std::string Novel::getCharacterListString() const{
     return character_list_strings;
 }
 
-void Novel::addCharacter(const std::string& character_list) {
-    character_list_.push_back(character_list);
+void Novel::addCharacter(const std::string& character_name) {
+    character_list_.push_back(character_name);
 }
 
- bool Novel::hasFilmAdaptation() const{
+bool Novel::hasFilmAdaptation() const{
     return has_film_adaptation_;
  }
 
-void Novel::setFilmAdaptation(const bool& has_film_adaptation){
+void Novel::setFilmAdaptation(){
     
      has_film_adaptation_ = true;
  }
@@ -67,28 +69,23 @@ review Novel::createReview(const double& score,const std::string& rating){  //Lo
 
  }
 
-void Novel::addReview(const review& review){
-    reviews_.push_back(review);
+void Novel::addReview(const review& object){
+    reviews_.push_back(object);
 }
 
- void Novel::calculateAverageRating(){ //reviews_ vector
-    if (reviews_.size() == 0){
+void Novel::calculateAverageRating(){
+    if(reviews_.empty()){
         averagerating_ = 0;
         return ;
-    } else {
-    double storage = 0; 
-    for(int i = 0; i < reviews_.size(); i++){
-        storage += reviews_[i].score_; //goes through the vector and all of the elements scores and puts into storage. 
     }
-    storage = storage/reviews_.size();
+    else {
+        double stor = 0;
+        for(int i = 0; i == reviews_.size(); i++){
+            stor += reviews_[i].score_; //goes through the vector and all of the elements scores and puts into storage. 
+        }
+        averagerating_ = stor/reviews_.size();
     }
- }
-
-
-
-
-
-
+}
 
 
 
