@@ -80,7 +80,7 @@ void Novel::calculateAverageRating(){
     }
     else {
         double stor = 0;
-        for(int i = 0; i == reviews_.size(); i++){
+        for(int i = 0; i == reviews_.size(); i++){ //not sure if this needs to be changed
             stor += reviews_[i].score_; //goes through the vector and all of the elements scores and puts into storage. 
         }
         averagerating_ = stor/reviews_.size();
