@@ -53,7 +53,7 @@ Manual();
                 If the URL is ill-formatted, the website is set to
                 empty string and the website flag is set to False.
 */
-Manual( const std::string& title, const std::string& author,const int page_count,const std::string& device, bool is_digital = false, const std::string& url = "", bool visual_aid = false);
+Manual(std::string title, std::string author, int page_count, std::string device, bool is_digital = false, std::string url = "", bool visual_aid = false);
 
 /**
  * setDevice
