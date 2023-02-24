@@ -1,6 +1,6 @@
-//Camilla Calle
-//Febuary 15, 2023
-//Manual.hpp
+//Author: Camilla Calle
+//Date: Febuary 15, 2023
+//File: Manual.hpp
 //This is the interface file used to define functions. Here I used inheritance and worked with the Book class I created 
 //in the previous project.
 

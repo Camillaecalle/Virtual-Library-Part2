@@ -1,6 +1,6 @@
-//Camilla Calle
-//Febuary 18, 2023
-//Textbook.hpp
+//Author: Camilla Calle
+//Date: Febuary 18, 2023
+//File: Textbook.hpp
 //Textbook.hpp uses inheritance and creates the Class textbook that is part of Book. Here we also use the enum grade_level.
 
 #ifndef TEXTBOOK_HPP_

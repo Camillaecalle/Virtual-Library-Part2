@@ -1,6 +1,6 @@
-//Camilla Calle
-//Febuary 18, 2023
-//Textbook.cpp
+//Author: Camilla Calle
+//Date: Febuary 18, 2023
+//File: Textbook.cpp
 //Textbook.cpp implements the functions we declared in Textbook.hpp, we use inheritance and the enum grade_level.
 
 #include "Textbook.hpp"

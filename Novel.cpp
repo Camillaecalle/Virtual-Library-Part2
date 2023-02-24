@@ -1,6 +1,6 @@
-//Camilla Calle
-//Febuary 22, 2023
-//Novel.cpp
+//Author: Camilla Calle
+//Date: Febuary 22, 2023
+//File: Novel.cpp
 //Novel.cpp is the implementation of the functions in the interaface file, Novel.hpp.
 
 #include "Novel.hpp"

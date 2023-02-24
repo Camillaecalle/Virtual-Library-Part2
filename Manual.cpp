@@ -1,6 +1,6 @@
-// Camilla Calle
-// Febuary 15, 2023
-// Manual.cpp
+// Author: Camilla Calle
+// Date: Febuary 15, 2023
+// File: Manual.cpp
 // This is the implementation file used to implement regex and the functions I defined in the interface file.
 // Here I used inheritance and worked with the Book class I created in the previous project.
 
