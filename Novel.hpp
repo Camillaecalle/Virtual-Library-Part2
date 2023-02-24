@@ -7,7 +7,6 @@
 #include <string>
 
 
-
 struct review {
     double score_;
     std::string rating_;
@@ -21,7 +20,6 @@ class Novel: public Book {
     std::vector<review> reviews_; //vector
     double averagerating_;
     bool has_film_adaptation_;
-
     public:
     Novel();
     Novel( std::string title, std::string author, int page_count, std::string genre, bool is_digital = false, bool film_adaptation = false);
