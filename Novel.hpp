@@ -1,6 +1,6 @@
 //Camilla Calle
 //Febuary 22, 2023
-//Nove.hpp
+//Novel.hpp
 //Novel.hpp interface file that creates the class Novel, a part of Book (inheritance). Here we worked with struct and vectors. 
 
 
