@@ -30,7 +30,7 @@ Textbook::Textbook(){
   @post      : The private members are set to the values of the
                 corresponding parameters.
 */
-Textbook::Textbook(const std::string& title,const std::string& author, const int page_count,const std::string& subject, bool is_digital,const grade_level& grade, bool review_questions):
+Textbook::Textbook( std::string title, std::string author, int page_count, std::string subject, bool is_digital, grade_level grade, bool review_questions):
 Book(title, author, page_count,is_digital){
     grade_=grade;
     subject_=subject;

@@ -10,7 +10,6 @@
   Default constructor.
   Default-initializes all private members.
 */
-
 Manual::Manual(){
 
     url_ = ""; 
@@ -40,10 +39,8 @@ Manual::Manual(){
                 If the URL is ill-formatted, the website is set to
                 empty string and the website flag is set to False.
 */
-
 Manual::Manual(std::string title, std::string author,int page_count, std::string device, bool is_digital, std::string url, bool visual_aid):
 Book(title, author, page_count, is_digital){
-    
     device_ = device;
     visual_ = visual_aid;
     const std::string regexPattern("https?://www.[a-zA-Z0-9-~:/?#@!$&+,;%=]+.[a-zA-Z0-9-~:/?#@!$&+,;%=]{2,}");

@@ -9,9 +9,9 @@
 #include <iostream>
 #include <string>
 
-//    - An enum named `grade_level`
-//      with values `{NONE,  ELEMENTARY, JUNIOR_HIGH, HIGH_SCHOOL, COLLEGE}`
-//      in that order.
+//    An enum named `grade_level`
+//    with values `{NONE,  ELEMENTARY, JUNIOR_HIGH, HIGH_SCHOOL, COLLEGE}`
+//    in that order.
 
 enum grade_level { NONE, ELEMENTARY, JUNIOR_HIGH, HIGH_SCHOOL, COLLEGE};
 
@@ -41,7 +41,7 @@ class Textbook : public Book {
   @post      : The private members are set to the values of the
                 corresponding parameters.
     */
-    Textbook(const std::string& title, const std::string& author,const int page_count, const std::string& subject, bool is_digital = false, const grade_level& grade = NONE, bool review_questions = false);  
+    Textbook(std::string title, std::string author, int page_count, std::string subject, bool is_digital = false, grade_level grade = NONE, bool review_questions = false);  
     
     //setSubject
     //@param  : a reference to a string representing the the subject of the book
